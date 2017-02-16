@@ -7,7 +7,7 @@ public class smallestMultiple {
         int num = 0;
         int multiples = 20;
         while (!multiplied) {
-            num += 1;
+            num += multiples;
             int count = 0;
             for (int i = 1; i <= multiples; i++) {
                 if (num % i == 0) {
