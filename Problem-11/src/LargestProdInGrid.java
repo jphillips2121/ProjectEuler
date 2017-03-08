@@ -13,6 +13,7 @@ public class LargestProdInGrid {
                 }
             }
         }
+        //Calculates time
         System.out.println(maximumProdInGrid);
         long endTime = System.currentTimeMillis();
         long totalTime = endTime - startTime;
