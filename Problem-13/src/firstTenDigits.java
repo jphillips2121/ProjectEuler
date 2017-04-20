@@ -1,14 +1,11 @@
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.stream.Stream;
+import java.math.BigInteger;
 
 /**
  * Created by jphillips3 on 20/03/2017.
  */
 public class firstTenDigits {
-    public static void main(String[] args) throws IOException{
+    public static String getNumbers() {
         String numbers = "37107287533902102798797998220837590246510135740250\n" +
                 "46376937677490009712648124896970078050417018260538\n" +
                 "74324986199524741059474233309513058123726617309629\n" +
@@ -110,7 +107,31 @@ public class firstTenDigits {
                 "20849603980134001723930671666823555245252804609722\n" +
                 "53503534226472524250874054075591789781264330331690";
 
-                System.out.println(numbers);
+                return numbers;
+    }
+
+    public static void main(String[] args) throws IOException{
+                String numbers = getNumbers();
+                BigInteger SumOfAllNumbers = new BigInteger("1");
+                for (int i = 0; i <= 99; i++) {
+                    String strFiftyDigitNum = "";
+                    for (int j = 0; j <= 49; j++) {
+                        //Creates the fifty digit string which will later become a BigInteger to be added.
+                        int seq = (i*51) + j;
+                        strFiftyDigitNum += numbers.charAt(seq);
+                    }
+                    //Adds fifty digit number to running total
+                    BigInteger newNumber = new BigInteger(strFiftyDigitNum);
+                    SumOfAllNumbers = SumOfAllNumbers.add(newNumber);
+                }
+                //Prints entire Sum
+                //System.out.println(SumOfAllNumbers.toString());
+
+                //Prints first ten digits
+                for (int i = 0; i <= 9; i++) {
+                    System.out.print((SumOfAllNumbers.toString()).charAt(i));
+                }
+
     }
 
 }
