@@ -8,7 +8,7 @@ public class LargestProduct {
         int digitCount = 13;
         int digits = digitCount; //digitCount iterates whilst digits stays the same
         for (int j = digits; j < sequence.length(); j++) {
-            Long multipleNum = 1L;
+            long multipleNum = 1L;
             for (int i = digitCount - digits; i < digitCount; i++) {
                 multipleNum *= Character.getNumericValue(sequence.charAt(i));
             }
