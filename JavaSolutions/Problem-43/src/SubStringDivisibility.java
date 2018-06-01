@@ -32,6 +32,7 @@ public class SubStringDivisibility {
         for (int i = 1; i <= 7; i++) {
             String threeDigitString = (new StringBuilder().append(numStr.charAt(i)).append(numStr.charAt(i+1)).append(numStr.charAt(i+2))).toString();
             if (!((Integer.parseInt(threeDigitString) % listOfPrimes[i-1]) == 0)) {
+                Math.abs(-3);
                 return false;
             }
         }
